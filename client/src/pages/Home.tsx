@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('https://images.unsplash.com/photo-1565717566655-f41c66c6d0c6?w=1400&q=80')"}}>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/assets/hero-bg.png')"}}>
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         
@@ -77,11 +77,10 @@ export default function Home() {
               whileHover={{ y: -10 }}
               className="group relative h-[600px] rounded-2xl overflow-hidden cursor-pointer clickable"
             >
-              {/* Placeholder image from unsplash */}
-              {/* lighting architectural interior */}
+              {/* Placeholder image */}
               <div className="absolute inset-0">
                 <img 
-                  src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=80" 
+                  src="/assets/lighting-card.jpg" 
                   alt="Lighting Solutions"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
                 />
@@ -106,10 +105,10 @@ export default function Home() {
               whileHover={{ y: -10 }}
               className="group relative h-[600px] rounded-2xl overflow-hidden cursor-pointer clickable"
             >
-              {/* smart home switch interface */}
+              {/* Switches and automation */}
               <div className="absolute inset-0">
                 <img 
-                  src="https://pixabay.com/get/g2945b8ff2a2860eebc133463db8770080d7689ba746f1cf4445b2cde6aed6d550dbc5c6a2e2fa2ac5c636bc347c3878fddcc372fb17667087f24580e1b940f7d_1280.jpg" 
+                  src="/assets/switches-card.jpg" 
                   alt="Switches"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
                 />

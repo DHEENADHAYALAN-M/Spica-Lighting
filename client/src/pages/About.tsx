@@ -23,7 +23,7 @@ export default function About() {
           <div className="relative">
             <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-xl" />
             <img 
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" 
+              src="/assets/about-image.jpg" 
               alt="Interior Lighting Design"
               className="relative rounded-2xl border border-white/10 shadow-2xl"
             />

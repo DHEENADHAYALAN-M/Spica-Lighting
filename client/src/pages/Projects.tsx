@@ -56,7 +56,7 @@ export default function Projects() {
             <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer md:col-span-2 aspect-[21/9]">
               {/* Luxury hotel lobby lighting */}
               <img 
-                src="https://pixabay.com/get/g2bd19d83f548672027a7e55ef175b394c7d7f105326e3724d3ab814d81acc5ceb0ea7939f780be198de009edf7a0096c63306039c1f06f29e74b7665aa0c9676_1280.jpg" 
+                src="/assets/project-luxury-hotel.jpg" 
                 alt="Luxury Hotel Lobby"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -69,7 +69,7 @@ export default function Projects() {
             <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]">
               {/* Modern office lighting */}
               <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" 
+                src="/assets/project-corporate-office.jpg" 
                 alt="Corporate Office"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -82,7 +82,7 @@ export default function Projects() {
             <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]">
               {/* Smart home switches */}
               <img 
-                src="https://pixabay.com/get/g67d17b2f881670b02207cb10582ad58967d6d724a5ce3f163b6ea229d86446f7cda7734664a02a9ee8e8f5f248d1c513d53063baadca8538ebf967dc36935ef6_1280.jpg" 
+                src="/assets/project-smart-home.jpg" 
                 alt="Smart Home"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

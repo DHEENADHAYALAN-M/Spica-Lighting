@@ -34,8 +34,15 @@ export function Navigation() {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/">
-            <div className="text-lg font-bold tracking-widest uppercase cursor-pointer clickable">
-              <span className="text-primary">SPICA</span> LIGHTING
+            <div className="flex items-center gap-3 cursor-pointer clickable">
+              <img 
+                src="/assets/logo.png" 
+                alt="Spica Lighting Logo" 
+                className="w-12 h-12 rounded-full object-cover border border-primary/20"
+              />
+              <div className="text-lg font-bold tracking-widest uppercase">
+                <span className="text-primary">SPICA</span> LIGHTING
+              </div>
             </div>
           </Link>
 
