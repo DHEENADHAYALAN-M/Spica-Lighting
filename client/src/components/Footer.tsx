@@ -8,8 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link href="/">
-              <div className="text-3xl font-bold tracking-widest uppercase cursor-pointer clickable">
-                Spica<span className="text-primary">.</span>
+              <div className="text-2xl font-bold tracking-widest uppercase cursor-pointer clickable">
+                <span className="text-primary">SPICA</span> LIGHTING
               </div>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed">

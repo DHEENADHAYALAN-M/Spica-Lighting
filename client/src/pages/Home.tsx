@@ -38,10 +38,10 @@ export default function Home() {
               Authorized Wipro Dealer
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-light text-white mb-8 tracking-tight">
-              ILLUMINATE <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-200 to-primary bg-[length:200%_auto] animate-gradient">
-                EXCELLENCE
-              </span>
+                SPICA
+              </span> <br />
+              LIGHTING
             </h1>
             <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
               Architectural lighting solutions and premium switchgear that transform spaces into experiences.

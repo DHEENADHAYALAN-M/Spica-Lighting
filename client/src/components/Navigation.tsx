@@ -34,8 +34,8 @@ export function Navigation() {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/">
-            <div className="text-2xl font-bold tracking-widest uppercase cursor-pointer clickable">
-              Spica<span className="text-primary">.</span>
+            <div className="text-lg font-bold tracking-widest uppercase cursor-pointer clickable">
+              <span className="text-primary">SPICA</span> LIGHTING
             </div>
           </Link>
 
