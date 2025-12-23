@@ -1,24 +1,24 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
-  // Your actual frontend lives inside /client
+  // Frontend root
   root: "client",
 
   plugins: [
     react(),
   ],
 
-  // Build output will be: client/dist
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-  },
-
-  // Path aliases (safe & minimal)
   resolve: {
     alias: {
-      "@": "/src",
+      "@": path.resolve(__dirname, "client/src"),
+      "@shared": path.resolve(__dirname, "shared"),
     },
+  },
+
+  build: {
+    outDir: "dist",       // → client/dist
+    emptyOutDir: true,
   },
 });
