@@ -12,7 +12,6 @@ import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -39,7 +38,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <CustomCursor />
         <Navigation />
         <ScrollToTop />
         <main className="min-h-screen">

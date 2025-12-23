@@ -34,7 +34,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block py-1 px-3 border border-primary/30 rounded-full text-primary text-xs tracking-[0.3em] uppercase mb-8 backdrop-blur-sm">
+            <span className="inline-block py-1 px-3 border border-primary/30 rounded-full text-primary text-xs tracking-[0.3em] uppercase mb-8 backdrop-blur-sm mt-16">
               Authorized Wipro Dealer
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-light text-white mb-8 tracking-tight">
