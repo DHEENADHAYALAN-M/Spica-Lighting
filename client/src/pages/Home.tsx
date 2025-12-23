@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=1200&q=80')"}}>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('https://images.unsplash.com/photo-1565717566655-f41c66c6d0c6?w=1400&q=80')"}}>
         {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         
         {/* Animated Light Beams */}
         <motion.div 
