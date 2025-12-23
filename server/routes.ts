@@ -30,29 +30,29 @@ async function seedDatabase() {
       name: "High-Bay LED Luminaire",
       description: "Optimized for large industrial and commercial spaces.",
       category: "Lighting Solutions",
-      imageUrl: "https://images.unsplash.com/photo-1558444458-5c455962cb63",
-      brochureUrl: "#"
+      imageUrl: "/assets/high-bay_led_luminaire.png",
+      brochureUrl: "/brochures/lighting-brochure.pdf"
     });
     await storage.createProduct({
       name: "Architectural Recessed Light",
       description: "Seamless integration into modern ceiling designs.",
       category: "Lighting Solutions",
-      imageUrl: "https://images.unsplash.com/photo-1540518614846-7eded433c457",
-      brochureUrl: "#"
+      imageUrl: "/assets/architectural_recessed_light.png",
+      brochureUrl: "/brochures/lighting-brochure.pdf"
     });
     await storage.createProduct({
       name: "Smart Touch Switch",
       description: "Glass finish touch controls with WiFi connectivity.",
       category: "Switches & Smart Switches",
-      imageUrl: "https://images.unsplash.com/photo-1558002038-1055907df827",
-      brochureUrl: "#"
+      imageUrl: "/assets/smart_touch_switch.png",
+      brochureUrl: "/brochures/switches-brochure.pdf"
     });
     await storage.createProduct({
       name: "Dimmable Smart Dimmer",
       description: "Precise lighting control via app or touch.",
       category: "Switches & Smart Switches",
-      imageUrl: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15",
-      brochureUrl: "#"
+      imageUrl: "/assets/smart_dimmer_switch.png",
+      brochureUrl: "/brochures/switches-brochure.pdf"
     });
   }
 
@@ -62,19 +62,19 @@ async function seedDatabase() {
       title: "Corporate Headquarters - Tech Park",
       type: "Lighting",
       location: "Bangalore",
-      imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c"
+      imageUrl: "/assets/corporate_tech_park.png"
     });
     await storage.createProject({
       title: "Premium Residential Villa",
       type: "Switch Installation",
       location: "Chennai",
-      imageUrl: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d"
+      imageUrl: "/assets/premium_residential_villa.png"
     });
     await storage.createProject({
       title: "Apollo Hospital Wing",
       type: "Lighting",
       location: "Hyderabad",
-      imageUrl: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d"
+      imageUrl: "/assets/apollo_hospital_wing.png"
     });
   }
 }

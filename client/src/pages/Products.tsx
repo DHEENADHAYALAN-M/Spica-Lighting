@@ -48,7 +48,7 @@ export default function Products() {
               <h4 className="text-white font-bold mb-1">Lighting Brochure</h4>
               <p className="text-zinc-500 text-sm">Full specifications and styles</p>
             </div>
-            <a href="#" className="clickable flex items-center gap-2 text-primary hover:text-white transition-colors">
+            <a href="/brochures/Wipro_Lighting_Catalogue_24042025.pdf" download className="clickable flex items-center gap-2 text-primary hover:text-white transition-colors">
               <Download className="w-5 h-5" />
               <span className="uppercase text-xs tracking-widest font-bold">PDF</span>
             </a>
@@ -58,7 +58,7 @@ export default function Products() {
               <h4 className="text-white font-bold mb-1">Switches Catalogue</h4>
               <p className="text-zinc-500 text-sm">Smart systems & finishes</p>
             </div>
-            <a href="#" className="clickable flex items-center gap-2 text-primary hover:text-white transition-colors">
+            <a href="/brochures/Wipro_Smart_Switch_Brochure.pdf" download className="clickable flex items-center gap-2 text-primary hover:text-white transition-colors">
               <Download className="w-5 h-5" />
               <span className="uppercase text-xs tracking-widest font-bold">PDF</span>
             </a>

@@ -53,42 +53,42 @@ export default function Projects() {
         ) : (
           /* Fallback static content for demo purposes if DB is empty */
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
-            <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer md:col-span-2 aspect-[21/9]">
-              {/* Luxury hotel lobby lighting */}
+            <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer md:col-span-2 aspect-video">
+              {/* Corporate headquarters */}
               <img 
-                src="/assets/project-luxury-hotel.jpg" 
-                alt="Luxury Hotel Lobby"
+                src="/assets/corporate_tech_park.png" 
+                alt="Corporate Tech Park"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
-                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Hospitality Lighting</span>
-                <h3 className="text-3xl text-white font-display">The Grand Meridian</h3>
+                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Corporate Lighting</span>
+                <h3 className="text-3xl text-white font-display">Corporate Headquarters - Tech Park</h3>
               </div>
             </motion.div>
             
             <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]">
-              {/* Modern office lighting */}
+              {/* Premium residential villa */}
               <img 
-                src="/assets/project-corporate-office.jpg" 
-                alt="Corporate Office"
+                src="/assets/premium_residential_villa.png" 
+                alt="Premium Residential Villa"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
-                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Office Solutions</span>
-                <h3 className="text-2xl text-white font-display">TechPark Ventures</h3>
+                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Residential</span>
+                <h3 className="text-2xl text-white font-display">Premium Residential Villa</h3>
               </div>
             </motion.div>
             
             <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]">
-              {/* Smart home switches */}
+              {/* Apollo hospital */}
               <img 
-                src="/assets/project-smart-home.jpg" 
-                alt="Smart Home"
+                src="/assets/apollo_hospital_wing.png" 
+                alt="Apollo Hospital Wing"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
-                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Home Automation</span>
-                <h3 className="text-2xl text-white font-display">Residence 42</h3>
+                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Healthcare Lighting</span>
+                <h3 className="text-2xl text-white font-display">Apollo Hospital Wing</h3>
               </div>
             </motion.div>
           </div>
