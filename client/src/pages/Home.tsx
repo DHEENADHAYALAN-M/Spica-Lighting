@@ -77,12 +77,12 @@ export default function Home() {
               whileHover={{ y: -10 }}
               className="group relative h-[600px] rounded-2xl overflow-hidden cursor-pointer clickable"
             >
-              {/* Placeholder image */}
+              {/* Lighting Solutions Image */}
               <div className="absolute inset-0">
                 <img 
-                  src="/assets/lighting-card.jpg" 
+                  src="/assets/lighting_solutions_card.png" 
                   alt="Lighting Solutions"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-60"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
@@ -92,7 +92,7 @@ export default function Home() {
                 <p className="text-zinc-400 mb-8 max-w-sm">
                   Cutting-edge LED fixtures and architectural lighting designs for modern spaces.
                 </p>
-                <Link href="/products?category=lighting">
+                <Link href="/products?category=Lighting Solutions">
                   <span className="inline-flex items-center gap-2 text-primary uppercase tracking-widest text-sm font-bold group-hover:gap-4 transition-all">
                     View Collection <ArrowRight className="w-4 h-4" />
                   </span>
@@ -108,9 +108,9 @@ export default function Home() {
               {/* Switches and automation */}
               <div className="absolute inset-0">
                 <img 
-                  src="/assets/switches-card.jpg" 
-                  alt="Switches"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+                  src="/assets/switches_&_automation_card.png" 
+                  alt="Switches & Automation"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-60"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
@@ -120,7 +120,7 @@ export default function Home() {
                 <p className="text-zinc-400 mb-8 max-w-sm">
                   Intelligent control systems and premium switchgear for the connected home.
                 </p>
-                <Link href="/products?category=switches">
+                <Link href="/products?category=Switches & Smart Switches">
                   <span className="inline-flex items-center gap-2 text-primary uppercase tracking-widest text-sm font-bold group-hover:gap-4 transition-all">
                     View Collection <ArrowRight className="w-4 h-4" />
                   </span>
