@@ -1,0 +1,99 @@
+import { motion } from "framer-motion";
+import { SectionHeading } from "@/components/SectionHeading";
+import { useProjects } from "@/hooks/use-projects";
+import { Loader2, MapPin } from "lucide-react";
+
+export default function Projects() {
+  const { data: projects, isLoading } = useProjects();
+
+  return (
+    <div className="min-h-screen bg-black pt-32 pb-20">
+      <div className="container mx-auto px-4">
+        <SectionHeading title="Selected Works" subtitle="Portfolio" />
+
+        {isLoading ? (
+          <div className="flex justify-center py-20">
+            <Loader2 className="w-10 h-10 text-primary animate-spin" />
+          </div>
+        ) : (projects && projects.length > 0) ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`group relative overflow-hidden rounded-xl cursor-pointer ${
+                  index % 3 === 0 ? "md:col-span-2 aspect-[21/9]" : "aspect-[4/3]"
+                }`}
+              >
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <span className="text-primary text-xs uppercase tracking-widest mb-2 block">{project.type}</span>
+                    <h3 className="text-2xl text-white font-display mb-2">{project.title}</h3>
+                    {project.location && (
+                      <div className="flex items-center text-zinc-400 text-sm">
+                        <MapPin className="w-4 h-4 mr-2" />
+                        {project.location}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          /* Fallback static content for demo purposes if DB is empty */
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+            <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer md:col-span-2 aspect-[21/9]">
+              {/* Luxury hotel lobby lighting */}
+              <img 
+                src="https://pixabay.com/get/g2bd19d83f548672027a7e55ef175b394c7d7f105326e3724d3ab814d81acc5ceb0ea7939f780be198de009edf7a0096c63306039c1f06f29e74b7665aa0c9676_1280.jpg" 
+                alt="Luxury Hotel Lobby"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
+                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Hospitality Lighting</span>
+                <h3 className="text-3xl text-white font-display">The Grand Meridian</h3>
+              </div>
+            </motion.div>
+            
+            <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]">
+              {/* Modern office lighting */}
+              <img 
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" 
+                alt="Corporate Office"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
+                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Office Solutions</span>
+                <h3 className="text-2xl text-white font-display">TechPark Ventures</h3>
+              </div>
+            </motion.div>
+            
+            <motion.div className="group relative overflow-hidden rounded-xl cursor-pointer aspect-[4/3]">
+              {/* Smart home switches */}
+              <img 
+                src="https://pixabay.com/get/g67d17b2f881670b02207cb10582ad58967d6d724a5ce3f163b6ea229d86446f7cda7734664a02a9ee8e8f5f248d1c513d53063baadca8538ebf967dc36935ef6_1280.jpg" 
+                alt="Smart Home"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-8 flex flex-col justify-end">
+                <span className="text-primary text-xs uppercase tracking-widest mb-2 block">Home Automation</span>
+                <h3 className="text-2xl text-white font-display">Residence 42</h3>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
