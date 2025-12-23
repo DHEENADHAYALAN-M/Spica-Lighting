@@ -1,0 +1,243 @@
+Build a 100% complete, premium, futuristic, modern, animation-rich website for a lighting company named “Spica Lighting”.
+
+This website must feel HIGH-END, TRENDY, VISUALLY IMPRESSIVE, and USER-FRIENDLY, with a strong LIGHT-BULB and LIGHT-BEAM theme. It should look like a top-tier modern brand website, similar in experience quality to an e-commerce website, but without online payments.
+
+The website must be fully functional end-to-end and ready for real users.
+
+====================================================
+BUSINESS CONTEXT (VERY IMPORTANT)
+====================================================
+Company Name: Spica Lighting
+Tagline: Engineered Lighting for Professional Spaces
+Experience: 8+ Years
+Projects: 50+ Completed Projects
+
+Spica Lighting is a B2B lighting dealer and project-based solution provider.
+Spica Lighting is an AUTHORIZED DEALER of WIPRO LIGHTING.
+Mention Wipro Lighting professionally as the supplied brand, not as Spica’s own brand.
+
+Target users:
+- Architects
+- Builders
+- Contractors
+- Hospitals
+- Commercial & Institutional clients
+
+This must NOT look like a student project or a basic corporate site.
+
+====================================================
+OVERALL FEEL & DESIGN LANGUAGE
+====================================================
+Overall feel:
+- Futuristic
+- Premium
+- Modern
+- Trendy
+- Architectural
+- Light-inspired
+
+Theme:
+- Deep black base
+- Gold accents
+- Dark grey and soft grey highlights
+- White and muted grey text
+
+Visual language:
+- Light beams
+- Glow accents
+- Soft highlights
+- Subtle reflections
+- Glassmorphism panels
+- Smooth, elegant motion
+- Cinematic animations
+
+Avoid:
+- Childish UI
+- Neon overload
+- Cheap effects
+- Static boring layouts
+- Plain corporate look
+
+====================================================
+GLOBAL INTERACTION & EXPERIENCE
+====================================================
+- Custom light-themed animated cursor that looks like a moving light source
+- Cursor has a glowing gold core with a soft halo
+- Smooth inertia movement
+- Cursor reacts on hover over buttons, cards, images
+- Smooth scrolling across the website
+- Premium hover effects everywhere
+- Fully responsive and mobile-friendly
+
+====================================================
+WEBSITE STRUCTURE
+====================================================
+Create the following pages:
+- Home
+- About
+- Products
+- Projects
+- Contact
+
+====================================================
+CORE PRODUCT STRUCTURE (VERY IMPORTANT)
+====================================================
+There are ONLY TWO MAIN PRODUCT TYPES:
+1. Lighting Solutions
+2. Switches & Smart Switches
+
+The website must clearly guide users to choose between these two.
+
+====================================================
+HOME PAGE (HIGHLY ANIMATED & CONVERSION-FOCUSED)
+====================================================
+Hero Section:
+- Full-screen dark background
+- Animated light rays / gradients
+- Abstract or minimal floating light-bulb inspired visual
+- Large bold headline:
+  Engineered Lighting for Professional Spaces
+- Supporting text describing B2B lighting expertise
+- Primary button:
+  Get Quote on WhatsApp
+- Secondary button:
+  Explore Products
+
+Use smooth entrance animations (fade, slide, scale).
+
+----------------------------------------------------
+Featured Product Entry Section
+----------------------------------------------------
+Two large premium cards:
+- Lighting Solutions
+- Switches & Smart Switches
+
+Each card must:
+- Have hover glow and light sweep animation
+- Clearly explain what the user will find
+- Have two buttons:
+  - View Products
+  - Get Quote
+
+----------------------------------------------------
+Trust & Credibility Section
+----------------------------------------------------
+Animated metrics:
+- 8+ Years of Experience
+- 50+ Completed Projects
+- Trusted by Architects & Institutions
+- Authorized Wipro Lighting Dealer
+
+----------------------------------------------------
+Gallery Highlight Section (VERY IMPORTANT)
+----------------------------------------------------
+The gallery is a MAIN FEATURE of the website.
+
+- Show a grid of project images
+- Strong visual focus
+- Light hover overlays
+- Project type labels
+- Link to full Projects page
+
+====================================================
+PRODUCTS PAGE (E-COMMERCE–LIKE EXPERIENCE)
+====================================================
+This page must behave like a product browsing experience.
+
+Lighting Solutions Section:
+- Product categories and types (text-based)
+- Clean product-style cards
+- “Download Lighting Brochure” button
+- “Get Quote” button
+
+Switches & Smart Switches Section:
+- Switch categories and ranges
+- Clean product-style cards
+- “Download Switches Brochure” button
+- “Get Quote” button
+
+No pricing.
+No cart.
+No checkout.
+But the browsing experience should feel similar to an e-commerce site.
+
+====================================================
+BROCHURE DOWNLOAD (IMPORTANT)
+====================================================
+- Lighting brochure and Switches brochure are separate
+- Download buttons must be clearly visible
+- Opens PDF in new tab
+- Styled premium (gold outline or glow)
+- No login or form required
+
+====================================================
+PROJECTS PAGE (GALLERY-DRIVEN)
+====================================================
+This is a VISUAL-FIRST page.
+
+- Large image gallery
+- Real previous project image support
+- Categories:
+  - Lighting Projects
+  - Switch Installation Projects
+- Hover overlay with:
+  - Project type
+  - Location (if available)
+
+This page must strongly build trust.
+
+====================================================
+WHATSAPP QUOTE FLOW (CRITICAL)
+====================================================
+There is NO form submission anywhere on the site.
+
+For the entire website, quotation is handled ONLY through WhatsApp.
+
+On clicking any “Get Quote” button:
+1. Show a premium popup modal matching the site theme
+2. Ask for:
+   - Name (mandatory)
+   - Product interest (Lighting / Switches / Both)
+3. After user continues, redirect to WhatsApp number:
+   +91 87546 35942
+
+Prefilled WhatsApp message format:
+Hello, my name is <USER_NAME>.
+I am interested in <PRODUCT_INTEREST> from Spica Lighting.
+Please contact me regarding quotation.
+
+====================================================
+ABOUT PAGE
+====================================================
+Include:
+- Company overview
+- 8+ year journey
+- B2B and institutional expertise
+- Wipro Lighting dealership mention
+- Quality, reliability, and execution focus
+- Vision for future growth
+
+Do NOT include:
+- Team section
+- Testimonials
+
+====================================================
+CONTACT PAGE
+====================================================
+- No contact form
+- Show business contact details
+- Prominent WhatsApp CTA button
+- Map placeholder
+- Premium layout consistent with theme
+
+====================================================
+FINAL REQUIREMENTS
+====================================================
+- The website must be fully functional
+- All interactions must work
+- Gallery and product flows must be smooth
+- WhatsApp flow must work perfectly
+- No database
+- No backend
+- No explanations
+- Generate the entire website completely from scratch
