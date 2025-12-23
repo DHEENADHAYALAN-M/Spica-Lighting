@@ -1,20 +1,24 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
-import path from "path";
 
 export default defineConfig({
+  // Your actual frontend lives inside /client
+  root: "client",
+
   plugins: [
     react(),
-    runtimeErrorOverlay(),
   ],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
+
+  // Build output will be: client/dist
   build: {
     outDir: "dist",
     emptyOutDir: true,
+  },
+
+  // Path aliases (safe & minimal)
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
   },
 });
