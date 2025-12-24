@@ -15,3 +15,4 @@
 [x] 15. Fixed vite build output directory to dist/public for production deployment
 [x] 16. Installed cross-env dependency and pushed database schema - Import complete!
 [x] 17. Fixed Vercel build issue - created frontend-safe routes and updated imports
+[x] 18. Fixed local development image loading - copied all product/project images to client/public/assets
