@@ -27,32 +27,46 @@ async function seedDatabase() {
   const existingProducts = await storage.getProducts();
   if (existingProducts.length === 0) {
     await storage.createProduct({
-      name: "High-Bay LED Luminaire",
-      description: "Optimized for large industrial and commercial spaces.",
-      category: "Lighting Solutions",
-      imageUrl: "/assets/premium_led_luminaire.png",
-      brochureUrl: "/brochures/Wipro_Lighting_Catalogue_24042025.pdf"
-    });
-    await storage.createProduct({
       name: "Architectural Recessed Light",
-      description: "Seamless integration into modern ceiling designs.",
+      description: "Seamless integration into modern ceiling designs with adjustable beam angles",
       category: "Lighting Solutions",
-      imageUrl: "/assets/recessed_lighting_fixture.png",
-      brochureUrl: "/brochures/Wipro_Lighting_Catalogue_24042025.pdf"
+      imageUrl: "/assets/premium_led_recessed_light_fixture.png",
+      brochureUrl: ""
     });
     await storage.createProduct({
-      name: "Smart Touch Switch",
-      description: "Glass finish touch controls with WiFi connectivity.",
-      category: "Switches & Smart Switches",
-      imageUrl: "/assets/smart_wifi_switch.png",
-      brochureUrl: "/brochures/Wipro_Smart_Switch_Brochure.pdf"
+      name: "High-Bay LED Luminaire",
+      description: "Optimized for large industrial and commercial spaces with superior efficiency",
+      category: "Lighting Solutions",
+      imageUrl: "/assets/industrial_high-bay_led_luminaire.png",
+      brochureUrl: ""
     });
     await storage.createProduct({
-      name: "Dimmable Smart Dimmer",
-      description: "Precise lighting control via app or touch.",
+      name: "Modern Pendant Fixture",
+      description: "Elegant suspended lighting solution for contemporary architectural spaces",
+      category: "Lighting Solutions",
+      imageUrl: "/assets/modern_pendant_lighting_fixture.png",
+      brochureUrl: ""
+    });
+    await storage.createProduct({
+      name: "Smart WiFi Dimmer",
+      description: "Glass finish touch controls with WiFi connectivity and app integration",
       category: "Switches & Smart Switches",
-      imageUrl: "/assets/smart_dimmer_control.png",
-      brochureUrl: "/brochures/Wipro_Smart_Switch_Brochure.pdf"
+      imageUrl: "/assets/smart_wifi_dimmer_control_panel.png",
+      brochureUrl: ""
+    });
+    await storage.createProduct({
+      name: "Smart Touch Panel",
+      description: "Modern glass surface with intuitive touch controls and automation features",
+      category: "Switches & Smart Switches",
+      imageUrl: "/assets/smart_touch_switch_panel.png",
+      brochureUrl: ""
+    });
+    await storage.createProduct({
+      name: "Home Automation Hub",
+      description: "Advanced control system for comprehensive smart home integration",
+      category: "Switches & Smart Switches",
+      imageUrl: "/assets/smart_home_automation_hub.png",
+      brochureUrl: ""
     });
   }
 

@@ -1,38 +1,98 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
-import { useProducts } from "@/hooks/use-products";
-import { Download, Loader2 } from "lucide-react";
-import { QuoteModal } from "@/components/QuoteModal";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Since backend might be empty initially, we can use these as fallback or seed data visually
-const staticCategories = ["All", "Lighting Solutions", "Switches & Smart Switches"];
+// Product data - structured for easy expansion
+const productData = {
+  "Lighting Solutions": [
+    {
+      id: 1,
+      name: "Architectural Recessed Light",
+      description: "Seamless integration into modern ceiling designs with adjustable beam angles",
+      imageUrl: "/assets/premium_led_recessed_light_fixture.png",
+    },
+    {
+      id: 2,
+      name: "High-Bay LED Luminaire",
+      description: "Optimized for large industrial and commercial spaces with superior efficiency",
+      imageUrl: "/assets/industrial_high-bay_led_luminaire.png",
+    },
+    {
+      id: 3,
+      name: "Modern Pendant Fixture",
+      description: "Elegant suspended lighting solution for contemporary architectural spaces",
+      imageUrl: "/assets/modern_pendant_lighting_fixture.png",
+    },
+  ],
+  "Switches & Smart Switches": [
+    {
+      id: 4,
+      name: "Smart WiFi Dimmer",
+      description: "Glass finish touch controls with WiFi connectivity and app integration",
+      imageUrl: "/assets/smart_wifi_dimmer_control_panel.png",
+    },
+    {
+      id: 5,
+      name: "Smart Touch Panel",
+      description: "Modern glass surface with intuitive touch controls and automation features",
+      imageUrl: "/assets/smart_touch_switch_panel.png",
+    },
+    {
+      id: 6,
+      name: "Home Automation Hub",
+      description: "Advanced control system for comprehensive smart home integration",
+      imageUrl: "/assets/smart_home_automation_hub.png",
+    },
+  ],
+};
 
 export default function Products() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const { data: products, isLoading } = useProducts();
-  const [showQuote, setShowQuote] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<"Lighting Solutions" | "Switches & Smart Switches">("Lighting Solutions");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  // In a real scenario, this would filter the products array
-  // If products is empty, we show a sleek empty state
-  const filteredProducts = activeCategory === "All" 
-    ? (products || []) 
-    : (products || []).filter(p => p.category === activeCategory);
+  const products = productData[activeCategory];
+  const totalProducts = products.length;
+
+  // Handle infinite carousel
+  const getDisplayIndex = (index: number) => {
+    return ((index % totalProducts) + totalProducts) % totalProducts;
+  };
+
+  const visibleIndices = [
+    getDisplayIndex(currentIndex - 1),
+    getDisplayIndex(currentIndex),
+    getDisplayIndex(currentIndex + 1),
+  ];
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => prev - 1);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  // Reset carousel when switching categories
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [activeCategory]);
 
   return (
     <div className="min-h-screen bg-black pt-32 pb-20">
       <div className="container mx-auto px-4">
         <SectionHeading title="Product Catalogue" subtitle="Curated Excellence" />
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-4 mb-16">
-          {staticCategories.map((cat) => (
+        {/* Category Tabs */}
+        <div className="flex gap-4 mb-16 justify-center md:justify-start">
+          {(Object.keys(productData) as Array<"Lighting Solutions" | "Switches & Smart Switches">).map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`clickable px-6 py-2 rounded-full border transition-all text-sm uppercase tracking-wider ${
+              className={`clickable px-8 py-3 rounded-full border transition-all text-sm uppercase tracking-wider font-bold ${
                 activeCategory === cat
-                  ? "bg-primary border-primary text-black font-bold"
+                  ? "bg-primary border-primary text-black"
                   : "bg-transparent border-zinc-800 text-zinc-500 hover:border-zinc-600 hover:text-zinc-300"
               }`}
             >
@@ -41,85 +101,111 @@ export default function Products() {
           ))}
         </div>
 
-        {/* Brochure Downloads */}
-        <div className="grid md:grid-cols-2 gap-6 mb-20 p-8 rounded-2xl bg-zinc-900/30 border border-zinc-800">
-          <div className="flex items-center justify-between">
-            <div>
-              <h4 className="text-white font-bold mb-1">Lighting Brochure</h4>
-              <p className="text-zinc-500 text-sm">Full specifications and styles</p>
+        {/* Carousel Container */}
+        <div className="relative flex items-center justify-center gap-8 py-12">
+          {/* Previous Button */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handlePrevious}
+            className="clickable absolute left-0 z-20 p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-black transition-colors group"
+            aria-label="Previous product"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </motion.button>
+
+          {/* Products Carousel */}
+          <div className="relative w-full h-96 flex items-center justify-center overflow-hidden px-32">
+            <div ref={carouselRef} className="relative w-full h-full flex items-center justify-center">
+              {/* Side Images */}
+              {[
+                { index: visibleIndices[0], position: "left" },
+                { index: visibleIndices[1], position: "center" },
+                { index: visibleIndices[2], position: "right" },
+              ].map(({ index, position }) => {
+                const product = products[index];
+                const isCenter = position === "center";
+                const scale = isCenter ? 1 : 0.75;
+                const opacity = isCenter ? 1 : 0.6;
+                const zIndex = isCenter ? 10 : 1;
+                const translateX =
+                  position === "left" ? "-120%" : position === "right" ? "120%" : "0%";
+
+                return (
+                  <motion.div
+                    key={`${activeCategory}-${index}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity, scale, x: translateX, zIndex }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="absolute w-64 h-80"
+                  >
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                      <img
+                        src={product.imageUrl}
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                      {isCenter && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
-            <a href="/brochures/Wipro_Lighting_Catalogue_24042025.pdf" download className="clickable flex items-center gap-2 text-primary hover:text-white transition-colors">
-              <Download className="w-5 h-5" />
-              <span className="uppercase text-xs tracking-widest font-bold">PDF</span>
-            </a>
           </div>
-          <div className="flex items-center justify-between border-t md:border-t-0 md:border-l border-zinc-800 pt-6 md:pt-0 md:pl-6">
-            <div>
-              <h4 className="text-white font-bold mb-1">Switches Catalogue</h4>
-              <p className="text-zinc-500 text-sm">Smart systems & finishes</p>
-            </div>
-            <a href="/brochures/Wipro_Smart_Switch_Brochure.pdf" download className="clickable flex items-center gap-2 text-primary hover:text-white transition-colors">
-              <Download className="w-5 h-5" />
-              <span className="uppercase text-xs tracking-widest font-bold">PDF</span>
-            </a>
-          </div>
+
+          {/* Next Button */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleNext}
+            className="clickable absolute right-0 z-20 p-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-black transition-colors group"
+            aria-label="Next product"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </motion.button>
         </div>
 
-        {/* Product Grid */}
-        {isLoading ? (
-          <div className="flex justify-center py-20">
-            <Loader2 className="w-10 h-10 text-primary animate-spin" />
-          </div>
-        ) : filteredProducts.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map((product) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group bg-zinc-900/20 border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-colors"
-              >
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img 
-                    src={product.imageUrl} 
-                    alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <button 
-                      onClick={() => setShowQuote(true)}
-                      className="clickable px-6 py-2 bg-primary text-black text-sm uppercase font-bold tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform"
-                    >
-                      Inquire
-                    </button>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="text-xs text-primary mb-2 uppercase tracking-widest">{product.category}</div>
-                  <h3 className="text-xl text-white font-display mb-2">{product.name}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed line-clamp-2">{product.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20 border border-dashed border-zinc-800 rounded-2xl">
-            <h3 className="text-zinc-500 text-lg mb-4">Our catalogue is being updated.</h3>
-            <p className="text-zinc-600 max-w-md mx-auto mb-8">
-              New premium collections are arriving shortly. Please download our brochure or contact us directly.
+        {/* Product Details */}
+        {products[visibleIndices[1]] && (
+          <motion.div
+            key={`details-${activeCategory}-${visibleIndices[1]}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-12 text-center max-w-2xl mx-auto"
+          >
+            <div className="inline-block px-4 py-1 bg-primary/20 border border-primary/50 rounded-full mb-4">
+              <span className="text-primary text-xs uppercase tracking-widest font-bold">
+                {activeCategory}
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">
+              {products[visibleIndices[1]].name}
+            </h2>
+            <p className="text-zinc-400 text-lg leading-relaxed">
+              {products[visibleIndices[1]].description}
             </p>
-            <button 
-              onClick={() => setShowQuote(true)}
-              className="clickable px-8 py-3 bg-white/5 text-white border border-white/10 hover:bg-primary hover:text-black transition-colors uppercase tracking-widest text-sm font-bold"
-            >
-              Contact Sales
-            </button>
-          </div>
+          </motion.div>
         )}
-      </div>
 
-      <QuoteModal isOpen={showQuote} onClose={() => setShowQuote(false)} />
+        {/* Carousel Indicators */}
+        <div className="flex justify-center gap-2 mt-12">
+          {products.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`clickable h-2 rounded-full transition-all ${
+                getDisplayIndex(currentIndex) === index
+                  ? "w-8 bg-primary"
+                  : "w-2 bg-zinc-700 hover:bg-zinc-600"
+              }`}
+              aria-label={`Go to product ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
