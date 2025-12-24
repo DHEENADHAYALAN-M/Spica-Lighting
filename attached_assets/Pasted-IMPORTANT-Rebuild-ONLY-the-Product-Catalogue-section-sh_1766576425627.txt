@@ -1,0 +1,117 @@
+IMPORTANT:
+Rebuild ONLY the “Product Catalogue” section shown on the Products page.
+Do NOT change any other section, layout, styling, routing, navbar, footer, animations, deployment config, or existing functionality outside this section.
+
+STRICT SCOPE:
+- Modify ONLY the Product Catalogue section UI and logic.
+- Keep page spacing, fonts, colors, background, and theme exactly the same.
+- Do NOT remove or alter global styles, Tailwind config, or animations elsewhere.
+
+========================
+ASSETS UPDATE (CRITICAL)
+========================
+
+1. REMOVE ONLY THE FOLLOWING ASSETS:
+- Remove the current product images related to:
+  - Lights
+  - Switches
+(These are the images currently used inside the Product Catalogue section.)
+
+2. ADD NEW PRODUCT IMAGES:
+- Generate NEW premium, modern, professional product images for:
+  - Lighting Solutions
+  - Switches & Smart Switches
+- Images should feel:
+  - Architectural
+  - Commercial-grade
+  - High-end B2B lighting brand
+- Add these new images into the existing `assets` folder.
+- Organize clearly (example):
+  - assets/lights/
+  - assets/switches/
+
+3. DO NOT TOUCH THESE ASSETS:
+- Background images
+- Logo / favicon
+- Project images
+- UI textures
+- Any other images used outside Product Catalogue
+
+========================
+SECTION REBUILD RULES
+========================
+
+4. REMOVE COMPLETELY:
+- Remove brochure / catalogue download cards
+- Remove PDF icons
+- Remove “Lighting Brochure” and “Switches Catalogue”
+- Remove ALL filter options including “ALL”
+
+5. KEEP ONLY TWO PRODUCT CATEGORIES:
+- Lighting Solutions
+- Switches & Smart Switches
+
+These two should appear as the ONLY selectable tabs or buttons.
+
+6. INTERACTION BEHAVIOR:
+- When “Lighting Solutions” is active:
+  - Display ONLY lighting product images and details
+- When “Switches & Smart Switches” is active:
+  - Display ONLY switch product images and details
+- Default active category: Lighting Solutions
+
+7. PRODUCT DISPLAY (VERY IMPORTANT):
+- Products must be displayed in a SINGLE HORIZONTAL ROW
+- This row acts as a carousel / slider
+- Images must loop infinitely (no end)
+
+8. CAROUSEL DESIGN:
+- Center image:
+  - Bigger than others
+  - Brighter
+  - Fully opaque
+  - Slight emphasis (scale or clarity)
+- Side images:
+  - Slightly smaller
+  - Slightly dimmed
+- Smooth animated transitions when sliding
+
+9. NAVIGATION:
+- Add PREVIOUS and NEXT arrow buttons on left and right
+- Buttons must match existing gold + black theme
+- Clicking arrows moves carousel one item at a time
+
+10. PRODUCT CARD CONTENT:
+Each product must show:
+- Product image
+- Product name
+- Short professional description
+- Category label (Lighting / Switches)
+
+NO pricing  
+NO add-to-cart  
+NO forms  
+
+11. UX QUALITY:
+- Smooth transitions
+- Premium, modern, professional feel
+- Fully responsive
+- Keyboard & click friendly
+
+12. DATA HANDLING:
+- Use the NEWLY CREATED product images
+- Structure products so more items can be added easily later
+- No backend
+- No database
+- No API calls
+
+========================
+ABSOLUTE CONSTRAINTS
+========================
+- Do NOT change file structure outside assets
+- Do NOT modify Vite, build, or deployment configs
+- Do NOT alter routing or page navigation
+- Do NOT affect Vercel deployment behavior
+- Do NOT change any other sections visually or logically
+
+Only rebuild the Product Catalogue section as specified above.
