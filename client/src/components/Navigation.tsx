@@ -36,9 +36,9 @@ export function Navigation() {
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer clickable">
               <img 
-                src="/assets/logo.png" 
+                src="/favicon.png" 
                 alt="Spica Lighting Logo" 
-                className="w-12 h-12 rounded-full object-cover border border-primary/20"
+                className="h-12 w-auto object-contain drop-shadow-[0_0_6px_rgba(212,175,55,0.25)]"
               />
               <div className="text-lg font-bold tracking-widest uppercase">
                 <span className="text-primary">SPICA</span> LIGHTING
