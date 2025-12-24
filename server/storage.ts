@@ -17,21 +17,23 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async getProducts(): Promise<Product[]> {
-    return await db.select().from(products);
+    // Static mode - no database required
+    return [];
   }
 
   async getProjects(): Promise<Project[]> {
-    return await db.select().from(projects);
+    // Static mode - no database required
+    return [];
   }
 
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
-    const [product] = await db.insert(products).values(insertProduct).returning();
-    return product;
+    // Static mode - no database required
+    throw new Error("Not implemented in static mode");
   }
 
   async createProject(insertProject: InsertProject): Promise<Project> {
-    const [project] = await db.insert(projects).values(insertProject).returning();
-    return project;
+    // Static mode - no database required
+    throw new Error("Not implemented in static mode");
   }
 }
 

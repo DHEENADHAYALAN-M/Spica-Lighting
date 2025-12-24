@@ -80,7 +80,7 @@ export default function Home() {
               {/* Lighting Solutions Image */}
               <div className="absolute inset-0">
                 <img 
-                  src="/assets/lighting_solutions_card.png" 
+                  src="/assets/smart_led_panel_light.png" 
                   alt="Lighting Solutions"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-60"
                 />
@@ -108,7 +108,7 @@ export default function Home() {
               {/* Switches and automation */}
               <div className="absolute inset-0">
                 <img 
-                  src="/assets/switches_&_automation_card.png" 
+                  src="/assets/smart_home_automation_hub.png" 
                   alt="Switches & Automation"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-60"
                 />

@@ -1,0 +1,80 @@
+IMPORTANT – READ CAREFULLY AND FOLLOW STRICTLY
+
+This project does NOT require a database.
+There must be NO PostgreSQL, NO Drizzle ORM usage, and NO database initialization at any point.
+
+================================
+DATABASE REMOVAL (LOCKED)
+================================
+
+STOP AND REVERT THE FOLLOWING COMPLETELY:
+- Do NOT create or connect to any database
+- Do NOT run db:push
+- Do NOT require DATABASE_URL
+- Do NOT fetch product, image, or UI data from backend APIs
+- Do NOT block UI rendering based on database availability
+
+PROJECT INTENT (LOCKED):
+- This is a frontend-driven, static B2B lighting website
+- Products, images, and content must be rendered directly from static data
+- Backend (Express) exists ONLY to serve the frontend and optional empty API stubs
+- UI must NEVER depend on database state or backend data
+
+REQUIRED DATABASE ACTIONS:
+1. Disable or bypass all database initialization logic
+2. Stub or safely ignore any database-related imports
+3. Ensure no runtime errors occur when DATABASE_URL is missing
+4. Application must run fully with ZERO database configured
+
+================================
+FIX MISSING IMAGES – NO DATABASE
+================================
+
+The images for the following sections are NOT rendering correctly:
+- Lighting Solutions
+- Switches & Automation
+
+CAUSE:
+These images are currently sourced from database-backed or dynamic data, which must be removed.
+
+REQUIRED IMAGE FIX (STRICT):
+1. Do NOT use any database, API, hooks, or backend calls to load images
+2. Replace ALL dynamic image references with static paths or static imports
+3. Images must be loaded directly from the assets folder only
+
+ASSET USAGE RULES:
+- Lighting Solutions images must come from:
+  assets/lights/
+- Switches & Automation images must come from:
+  assets/switches/
+
+Example (conceptual only):
+- Lighting image → "/assets/lights/light-1.png"
+- Switch image → "/assets/switches/switch-1.png"
+
+IMPLEMENTATION REQUIREMENTS:
+- All <img> tags must receive valid static src paths
+- Images must render even if the backend is completely offline
+- Text, layout, spacing, animations, and theme must remain EXACTLY the same
+
+================================
+STRICT CONSTRAINTS (DO NOT BREAK)
+================================
+
+- Do NOT change routing
+- Do NOT change Vite or Vercel build configuration
+- Do NOT change layout, spacing, typography, or animations
+- Do NOT introduce new backend complexity
+- Do NOT modify any other sections of the website
+
+================================
+FINAL STATE REQUIRED
+================================
+
+- Application runs with ZERO database
+- No DATABASE_URL required
+- No db:push
+- Lighting Solutions image renders correctly
+- Switches & Automation image renders correctly
+- Product catalogue behaves correctly
+- Visual output matches both local and Vercel preview
