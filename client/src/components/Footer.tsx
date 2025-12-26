@@ -33,19 +33,46 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-display font-bold uppercase tracking-widest mb-6">Contact</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-zinc-500 text-sm">
-                <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span>123 Lighting Avenue, Design District, Chennai, India</span>
+            <h4 className="text-white font-display font-bold uppercase tracking-widest mb-6 text-sm md:text-base">
+              Contact
+            </h4>
+
+            <ul className="space-y-5">
+              {/* Address */}
+              <li>
+                <a
+                  href="https://maps.google.com/?q=123+Lighting+Avenue+Design+District+Chennai+India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 text-zinc-400 text-sm leading-relaxed hover:text-white transition-colors"
+                >
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span>
+                    123 Lighting Avenue, Design District, Chennai, India
+                  </span>
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-zinc-500 text-sm">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
-                <span>+91 87546 35942</span>
+
+              {/* Phone */}
+              <li>
+                <a
+                  href="tel:+918754635942"
+                  className="flex items-center gap-4 text-zinc-400 text-sm hover:text-white transition-colors"
+                >
+                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <span>+91 87546 35942</span>
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-zinc-500 text-sm">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span>hello@spicalighting.com</span>
+
+              {/* Email */}
+              <li>
+                <a
+                  href="mailto:spicalighting@gmail.com"
+                  className="flex items-center gap-4 text-zinc-400 text-sm break-all sm:break-normal hover:text-white transition-colors"
+                >
+                  <Mail className="w-5 h-5 text-primary shrink-0" />
+                  <span>spicalighting@gmail.com</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -56,7 +83,6 @@ export function Footer() {
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-black transition-all clickable">
                 <Instagram className="w-5 h-5" />
               </a>
-              {/* Add more social icons as needed */}
             </div>
           </div>
         </div>
