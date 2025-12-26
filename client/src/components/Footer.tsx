@@ -62,7 +62,16 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
-          <p>© {new Date().getFullYear()} Spica Lighting. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Spica Lighting. All rights reserved. Built by{" "}
+            <a
+              href="https://www.linkedin.com/in/dheenadhayalan-muruganantham/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-semibold hover:underline transition-all duration-300"
+            >
+              Damnex
+            </a>
+          </p>
           <div className="flex gap-6">
             <span className="hover:text-zinc-400 cursor-pointer clickable">Privacy Policy</span>
             <span className="hover:text-zinc-400 cursor-pointer clickable">Terms of Service</span>
